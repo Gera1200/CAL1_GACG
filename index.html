@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Antigüedad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CALCULADORA DE ANTIGÜEDAD</h1>
+    <form id="antiguedadForm">
+        <label for="clave">Terminación Clave (Últimos 6 dígitos):</label>
+        <input type="text" id="clave" name="clave" required maxlength="6">
+        
+        <label for="fechaIngreso">Fecha de Ingreso (dd/mm/aaaa):</label>
+        <input type="date" id="fechaIngreso" name="fechaIngreso" required>
+        
+        <label for="fechaEgreso">Fecha de Egreso (dd/mm/aaaa):</label>
+        <input type="date" id="fechaEgreso" name="fechaEgreso">
+        
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="1">Activo</option>
+            <option value="2">Licencia</option>
+        </select>
+        
+        <button type="button" onclick="agregarRegistro()">Agregar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Terminación Clave</th>
+                <th>Fecha de Ingreso</th>
+                <th>Fecha de Egreso</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody id="registroTabla">
+        </tbody>
+    </table>
+
+    <button onclick="calcularAntiguedad()">Calcular</button>
+
+    <div id="resultado">
+        <h3>Sumatoria Final en Años, Meses y Días</h3>
+        <p id="resultadoTexto"></p>
+    </div>
+
+    <footer>SSRN BPE/GACG</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
